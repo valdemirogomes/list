@@ -1,6 +1,7 @@
 package com.project.list.dto;
 
 import com.project.list.entities.Game;
+import com.project.list.projection.GameProjection;
 
 public class GameDto {
 	private Long id;
@@ -20,6 +21,15 @@ public class GameDto {
 		this.year = entity.getYear();
 		this.imgUrl = entity.getImgUrl();
 		this.shortDescription = entity.getShortDescription();
+	}
+
+	public GameDto(GameProjection projection) {
+		super();
+		this.id = projection.getId();
+		this.title = projection.getTitle();
+		this.year = projection.getYear();
+		this.imgUrl = projection.getImgUrl();
+		this.shortDescription = projection.getShortDescription();
 	}
 
 	public Long getId() {
